@@ -15,9 +15,8 @@ steps:
     versionSpec: '10.x'
   displayName: 'Node.js install'
 
-- script: /bin/bash -c 'cd www && cp package.json /home/vsts/work/ && npm install'
-
-- script: npm build
+- script: /bin/bash -c 'cd www && npm install && npm build'
+  displayName: 'Node ENV SET'
 
 - task: PublishBuildArtifacts@1
   inputs:
